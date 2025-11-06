@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý người dùng - React CDN</title>
+  <!-- React, ReactDOM, Babel via CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Quản lý người dùng</h1>
+    <div id="root"></div>
+  </div>
+
+  <!-- Load components split into separate files via Babel (global scope, order matters) -->
+  <script type="text/babel" data-presets="react,env" src="./components/SearchForm.jsx"></script>
+  <script type="text/babel" data-presets="react,env" src="./components/AddUser.jsx"></script>
+  <script type="text/babel" data-presets="react,env" src="./components/ResultTable.jsx"></script>
+  <script type="text/babel" data-presets="react,env" src="./App.jsx"></script>
+  <script type="text/babel" data-presets="react,env">
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
+
+
